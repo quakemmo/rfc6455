@@ -191,6 +191,7 @@ class MessageBuffer {
             if (!$closeFrame && $this->maxMessagePayloadSize > 0
                 && $payload_length + ($this->messageBuffer ? $this->messageBuffer->getPayloadLength() : 0) > $this->maxMessagePayloadSize) {
                 $closeFrame = $this->newCloseFrame(Frame::CLOSE_TOO_BIG, 'Maximum message size exceeded');
+				echo "rfc6455/src/Messaging/MessageBuffer.php: maximum message size of {$this->maxMessagePayloadSize} bytes exceeded\n";
             }
 
             if ($closeFrame !== null) {
