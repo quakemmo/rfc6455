@@ -115,7 +115,7 @@ class ServerNegotiator implements NegotiatorInterface {
             'Upgrade'              => 'websocket'
             , 'Connection'           => 'Upgrade'
             , 'Sec-WebSocket-Accept' => $this->sign((string)$request->getHeader('Sec-WebSocket-Key')[0])
-            , 'X-Powered-By'         => 'Ratchet'
+            //, 'X-Powered-By'         => 'Ratchet'
         ]));
 
         try {
